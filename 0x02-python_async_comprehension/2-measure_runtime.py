@@ -14,6 +14,6 @@ async def measure_runtime() -> float:
         routines in parallel
     """
     s = time.perf_counter()
-    await gather(asy_c(), asy_cc(), asy_c(), asy_c())
+    await gather(asy_c(), asy_c(), asy_c(), asy_c())
     elapsed = time.perf_counter() - s
     return elapsed
