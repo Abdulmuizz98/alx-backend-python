@@ -2,10 +2,11 @@
 """Contains the measure_runtime coroutine
 """
 
+from asyncio import gather
 import asyncio
 import time
 
-ac = __import__('1-async_comprehension').async_comprehension
+asy_c = __import__('1-async_comprehension').async_comprehension
 
 
 async def measure_runtime() -> float:
@@ -13,6 +14,6 @@ async def measure_runtime() -> float:
         routines in parallel
     """
     s = time.perf_counter()
-    await asyncio.gather(ac(), ac(), ac(), ac())
+    await gather(asy_c(), asy_cc(), asy_c(), asy_c())
     elapsed = time.perf_counter() - s
     return elapsed
